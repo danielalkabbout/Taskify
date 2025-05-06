@@ -144,7 +144,7 @@ namespace TaskManagementSystem.Controllers
                 return StatusCode(500, new { Message = "An error occurred", Error = ex.Message });
             }
         }
-        [Authorize]
+        [Authorize (Roles = "Admin")]
         [HttpGet("users/{id}")] 
         [ProducesResponseType(typeof(UserDetailDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]

@@ -105,7 +105,7 @@ namespace TaskManagementSystem.Controllers
         [ProducesResponseType(400)]
         [ProducesResponseType(401)]
         [ProducesResponseType(500)]
-        [Authorize(Roles = "Admin,Manager")] 
+        [Authorize] 
         public async Task<IActionResult> CreateNotification([FromBody] CreateNotificationDto dto)
         {
             try
