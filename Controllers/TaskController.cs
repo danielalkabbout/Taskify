@@ -37,6 +37,7 @@ namespace TaskManagementSystem.Controllers
         {
             try
             {
+                //LinQ query to get tasks based on filters
                 var query = _context.Tasks
                     .Where(t=>!t.IsDeleted)
                     .Include(t => t.Category)
@@ -704,6 +705,7 @@ namespace TaskManagementSystem.Controllers
                 {
                     query = query.Where(t => t.Category.Name == category);
                 }
+
 
                 if (fromDate.HasValue)
                 {

@@ -17,7 +17,7 @@ namespace TaskManagementSystem.Controllers
         {
             _context = context;
         }
-
+        [Authorize]
         [HttpPost]
         [ProducesResponseType(typeof(CategoryDto), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -66,7 +66,7 @@ namespace TaskManagementSystem.Controllers
                 });
             }
         }
-
+        [Authorize]
         [HttpGet("{id}")]
         [AllowAnonymous]
         [ProducesResponseType(typeof(CategoryDto), StatusCodes.Status200OK)]
@@ -88,6 +88,7 @@ namespace TaskManagementSystem.Controllers
 
             return Ok(categoryDto);
         }
+        [Authorize]
         [HttpGet]
         [AllowAnonymous]
         [ProducesResponseType(typeof(List<CategoryDto>), StatusCodes.Status200OK)]
@@ -103,7 +104,7 @@ namespace TaskManagementSystem.Controllers
 
             return Ok(categories);
         }
-
+        [Authorize]
         [HttpPut("{id}")]
         [ProducesResponseType(typeof(CategoryDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -150,7 +151,7 @@ namespace TaskManagementSystem.Controllers
                 });
             }
         }
-
+        [Authorize]
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

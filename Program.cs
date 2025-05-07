@@ -9,6 +9,7 @@ using System.Text;
 using TaskManagementSystem.Models;
 using QuestPDF.Infrastructure;
 // Create builder with explicit web root configuration
+//wwwroot is used to save files uploaded and to be stored
 var builder = WebApplication.CreateBuilder(new WebApplicationOptions
 {
     ContentRootPath = Directory.GetCurrentDirectory(),
